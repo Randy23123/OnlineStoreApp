@@ -1,10 +1,38 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     private String id;
     private String name;
     private double price;
     private String dep;
+    private List<Product> cartItems = new ArrayList<>();
+
+    public Product() {
+        String id;
+        String name;
+        double price;
+        String dep;
+    }
+
+    public void addItems(Product product){
+        cartItems.add(product);
+    }
+    public void removeItem(Product product){
+        cartItems.remove(product);
+    }
+    public List<Product> getItems(){
+        return cartItems;
+    }public double sumProduct(){
+        double total = 0;
+        for (Product product : cartItems){
+            total += product.getPrice();
+        }
+        return total;
+    }
+
 
     public Product(String id, String name, double price, String dep){
         this.id = id;
@@ -23,5 +51,8 @@ public class Product {
     }
     public String getDep(){
         return this.dep;
+    }
+
+    public void addItem(Product matchedProduct) {
     }
 }
