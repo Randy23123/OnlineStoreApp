@@ -25,12 +25,6 @@ public class Product {
     }
     public List<Product> getItems(){
         return cartItems;
-    }public double sumProduct(){
-        double total = 0;
-        for (Product product : cartItems){
-            total += product.getPrice();
-        }
-        return total;
     }
 
 

@@ -54,8 +54,7 @@ public class OnlineStoreApp {
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    System.out.println("You are checked out your total " + cart.sumProduct());
-                    System.out.println(" Have a great day! :)");
+                    System.out.println("You are checked out have a great day! :)");
                     cart = new Product();
                     break;
                 case 2:
@@ -77,6 +76,11 @@ public class OnlineStoreApp {
         for (Product product : cart.getItems()){
             if (product.getName().equals(name)){
                 productRemove = product;
+                System.out.println("It has now been removed do you want to remove more? (y/n): ");
+                String name1 = scanner.next();
+                if (name1.equalsIgnoreCase("n")) {
+                    System.out.println("Going back to your cart :)\n");
+                 }
                 break;
             }
         }
@@ -147,7 +151,6 @@ public class OnlineStoreApp {
                             System.out.println("\nDo you want it? (Y/N): ");
                             String item = scanner.next();
                             if (item.equalsIgnoreCase("y")) {
-                                cart.addItem(matchedProduct);
                                 System.out.println("Now added to your cart!");
                                 System.out.println("\nAre there any more items you would like (Y/N): ");
                                 String item1 = scanner.next();
